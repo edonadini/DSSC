@@ -11,7 +11,7 @@ I measured the execution time of all versions on a Ulysses node using 1, 2, 4, 8
 
 **Figure 1** show the results obtained through this procedure.
 
-![Average execution time for Pi approximation](Graph_data_race _handlers.jpeg)
+![Average execution time for Pi approximation](Graph.png)
 > Figure 1: Scalability of MonteCarlo integral approximation for different number of threads.
 
 From the plot and the data it is evident that parallelizing the code leads to significant improvements in terms of execution time.
