@@ -1,7 +1,7 @@
 The aim of this assignment is to compute the approximation of PI using a parallel approach based on MPI. Pi is computed by approximating an integral using the midpoint method (with 10^9 rettangules).
 
 To test the scalability of the program, we ran it with a number of processes
-ranging from 1 to 40 and using `10^10` breaks in the `[0,1]` interval.
+ranging from 1 to 40 and using `10^9` breaks in the `[0,1]` interval.
 The resulting times to solution are the following:
 ![mpi_scaling](mpi_scaling.png)
 
