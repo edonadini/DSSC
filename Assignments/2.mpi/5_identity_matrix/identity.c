@@ -2,7 +2,6 @@
 #include<stdlib.h>
 #include<mpi.h>
 
-//#define n 30
 
 //function to print the matrix
 void print_matrix(int *mat,int n_loc,int n,FILE *outfile){
