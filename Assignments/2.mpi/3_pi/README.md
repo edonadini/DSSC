@@ -1,0 +1,1 @@
+The aim of this assignment is to compute the approximation of PI using the midpoint method (with 10^9 rettangules); to reduce the final result in the last process (size – 1) and print the final output from 0; finally to compare timing with the OpenMP version, scaling the MPI version up to 2 nodes of Ulysses.
