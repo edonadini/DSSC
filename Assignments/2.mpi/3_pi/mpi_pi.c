@@ -20,7 +20,7 @@ MPI_Comm_size(MPI_COMM_WORLD,&npes);
 
 long int nloc=n/npes;
 long int start=nloc*rank;
-//int end=rank == (npes-1) ? start + n%npes + nloc: start+nloc;
+
 int end=rank < (n%npes) ? start+nloc+1: start+nloc;
 int reductor= npes-1;//the processor in which we reduce the final result
 int printer=0;//the processor that will print the result
