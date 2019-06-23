@@ -1,6 +1,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<mpi.h>
+#define n 1000000000
 
 double f(double x){
 return 1/(1+x*x);
@@ -9,7 +10,6 @@ return 1/(1+x*x);
 
 int main(int argc,char*argv[]){
 
-long int n=100000000;
 double h=1./n;
 int rank;//store the MPI identifier of the process
 int npes;//store the number of MPI processes
@@ -40,10 +40,10 @@ MPI_Reduce(&local_pi,&global_pi,1,MPI_DOUBLE,MPI_SUM,reductor,MPI_COMM_WORLD );
 
 double duration= MPI_Wtime()-start_time;
 
-if(rank==npes-1){
+if(rank==reductor){
 MPI_Send(&global_pi,1,MPI_DOUBLE,printer,101,MPI_COMM_WORLD);
 }
-if(rank==0){
+if(rank==printer){
 MPI_Recv(&global_pi,1,MPI_DOUBLE,reductor,101,MPI_COMM_WORLD,MPI_STATUS_IGNORE);
 printf("il valore di pi=%f calcolato in %f stampato dal processo %d\n ",global_pi,duration,printer);
 }
