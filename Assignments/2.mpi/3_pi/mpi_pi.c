@@ -3,8 +3,9 @@
 #include<mpi.h>
 #define n 1000000000
 
-double f(double x){
-return 1/(1+x*x);
+double f(double x)
+{
+	return 1/(1+x*x);
 }
 
 
@@ -40,12 +41,14 @@ MPI_Reduce(&local_pi,&global_pi,1,MPI_DOUBLE,MPI_SUM,reductor,MPI_COMM_WORLD );
 
 double duration= MPI_Wtime()-start_time;
 
-if(rank==reductor){
-MPI_Send(&global_pi,1,MPI_DOUBLE,printer,101,MPI_COMM_WORLD);
+if(rank==reductor)
+{
+	MPI_Send(&global_pi,1,MPI_DOUBLE,printer,101,MPI_COMM_WORLD);
 }
-if(rank==printer){
-MPI_Recv(&global_pi,1,MPI_DOUBLE,reductor,101,MPI_COMM_WORLD,MPI_STATUS_IGNORE);
-printf("il valore di pi=%f calcolato in %f stampato dal processo %d\n ",global_pi,duration,printer);
+if(rank==printer)
+{
+	MPI_Recv(&global_pi,1,MPI_DOUBLE,reductor,101,MPI_COMM_WORLD,MPI_STATUS_IGNORE);
+	printf("il valore di pi=%f calcolato in %f stampato dal processo %d\n ",global_pi,duration,printer);
 }
 
 
