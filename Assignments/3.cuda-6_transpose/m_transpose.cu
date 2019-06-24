@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include<stdlib.h>
 
 #define nths 1024
 #define n 8192 //size of the matrix
@@ -22,10 +22,10 @@ __syncthreads();
 m_out[col*siz+row]=tile[threadIdx.x][threadIdx.y];
 }
 
-int correctness(double *m_in,double *m_out, int siz){
-for (int i=0;i<siz; ++i)
-	for(int j=0;j<siz; ++j)
-		if(m_out[i*siz+j]!=m_in[j*siz+i])
+int correctness(double *m_in,double *m_out){
+for (int i=0;i<n; ++i)
+	for(int j=0;j<n; ++j)
+		if(m_out[i*n+j]!=m_in[j*n+i])
 			return 0;
 return 1;
 }
@@ -58,14 +58,14 @@ cudaEventRecord(start);
 //run a kernel
 kernel<<<grid,block>>>( mat_in_d, mat_out_d, dim);
 cudaEventRecord(stop);
+cudaEventSynchronize(stop);
 
 //move data from GPU to CPU
 cudaMemcpy( mat_out_h, mat_out_d, size, cudaMemcpyDeviceToHost);
 
 //verify the correctness
-printf("%s: %s\n",kernelName,correctness(mat_in_h,mat_out_h,size)? "Fail":"Correct");
+printf("%s: %s\n",kernelName,correctness(mat_in_h,mat_out_h)? "Fail":"Correct");
 
-cudaEventSynchronize(stop);
 float milliseconds=0;
 cudaEventElapsedTime(&milliseconds, start, stop);
 printf("Time in milliseconds: %f\n", milliseconds);
