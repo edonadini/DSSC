@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include<stdlib.h>
+#include <stdlib.h>
 
 #define nths 1024
 #define n 8192 //size of the matrix
@@ -58,13 +58,14 @@ cudaEventRecord(start);
 //run a kernel
 kernel<<<grid,block>>>( mat_in_d, mat_out_d, dim);
 cudaEventRecord(stop);
-cudaEventSynchronize(stop);
+
 //move data from GPU to CPU
 cudaMemcpy( mat_out_h, mat_out_d, size, cudaMemcpyDeviceToHost);
 
 //verify the correctness
-printf("%s: %s\n",kernelName,correctness(mat_in_h,mat_out_h,size)? "Correct":"Fail");
+printf("%s: %s\n",kernelName,correctness(mat_in_h,mat_out_h,size)? "Fail":"Correct");
 
+cudaEventSynchronize(stop);
 float milliseconds=0;
 cudaEventElapsedTime(&milliseconds, start, stop);
 printf("Time in milliseconds: %f\n", milliseconds);
