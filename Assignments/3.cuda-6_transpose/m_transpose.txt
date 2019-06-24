@@ -1,0 +1,32 @@
+Naive Transpose threads per block 64: Correct
+Time in milliseconds: 7.437760
+Bandwidth: 144.363600 GB/s
+-------------------
+Naive Transpose threads per block 512: Correct
+Time in milliseconds: 10.341408
+Bandwidth: 103.829368 GB/s
+-------------------
+Naive Transpose threads per block 512: Correct
+Time in milliseconds: 17.384289
+Bandwidth: 61.765072 GB/s
+-------------------
+Naive Transpose threads per block 1024: Correct
+Time in milliseconds: 19.159937
+Bandwidth: 56.040988 GB/s
+-------------------
+Optimized Transpose threads per block 64: Correct
+Time in milliseconds: 19.599903
+Bandwidth: 54.783016 GB/s
+-------------------
+Optimized Transpose threads per blocks 512: Correct
+Time in milliseconds: 13.200608
+Bandwidth: 81.340328 GB/s
+-------------------
+Optimized Transpose threads per block 512: Correct
+Time in milliseconds: 24.199455
+Bandwidth: 44.370496 GB/s
+-------------------
+Optimized Transpose threads per blocks 1024: Correct
+Time in milliseconds: 25.093472
+Bandwidth: 42.789688 GB/s
+-------------------
