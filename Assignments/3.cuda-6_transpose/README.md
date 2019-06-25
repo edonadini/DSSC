@@ -2,23 +2,39 @@ The purpose of the exercise is to implement a matrix transpose in CUDA that coul
 
 ## Results
 
-The original naive transpose algorithm using a thread block of the size of the tile (32x32) achieved a bandwidth of roughly 52.00 GB/s.
-
-while the bandwidth results of execution are given by the improved version of the algorithm which is tuned to exploit blocking for cache in order to maximize the use of shared memory on the GPU.
 ```
+-------------------
+Naive Transpose threads per block 64: Correct
+Time in milliseconds: 10585.202148
+Bandwidth: 0.101438 GB/s
+-------------------
+Naive Transpose threads per block 512: Correct
+Time in milliseconds: 3810.392334
+Bandwidth: 0.281793 GB/s
+-------------------
+Naive Transpose threads per block 512: Correct
+Time in milliseconds: 9413.301758
+Bandwidth: 0.114066 GB/s
+-------------------
+Naive Transpose threads per block 1024: Correct
+Time in milliseconds: 5358.452637
+Bandwidth: 0.200383 GB/s
+-------------------
 Optimized Transpose threads per block 64: Correct
-Time in milliseconds: 19.599903
-Bandwidth: 54.783016 GB/s
+Time in milliseconds: 19.577856
+Bandwidth: 54.844708 GB/s
 -------------------
 Optimized Transpose threads per blocks 512: Correct
-Time in milliseconds: 13.200608
-Bandwidth: 81.340328 GB/s
+Time in milliseconds: 13.285888
+Bandwidth: 80.818224 GB/s
 -------------------
 Optimized Transpose threads per block 512: Correct
-Time in milliseconds: 24.199455
-Bandwidth: 44.370496 GB/s
+Time in milliseconds: 24.196417
+Bandwidth: 44.376068 GB/s
 -------------------
 Optimized Transpose threads per blocks 1024: Correct
-Time in milliseconds: 25.093472
-Bandwidth: 42.789688 GB/s
+Time in milliseconds: 25.163937
+Bandwidth: 42.669868 GB/s
+-------------------
+
 ```
