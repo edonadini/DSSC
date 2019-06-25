@@ -3,7 +3,7 @@ The aim of this assignment is to compute the approximation of PI using a paralle
 To test the scalability of the program, we ran it with a number of processes
 ranging from 1 to 40 and using `10^9` breaks in the `[0,1]` interval.
 The resulting times to solution are the following:
-![mpi_scaling](risultati_mpi.png)
+![mpi_scaling](risultatiti_mpi.png)
 
 We can see that the the code scales properly as the number of processes is
 increased.
