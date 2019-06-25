@@ -13,5 +13,3 @@ We also compared the above implementation with the previous version of the
 program obtained using OpenMP. Again the two programs have been tested one against
 the other using a number of processes/threads ranging from 1 to 20.
 ![mpi_vs_openmp](risultati_confronto.png)
-From our results, the MPI implementation appears to be faster than the OpenMP
-one.
