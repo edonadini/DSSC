@@ -24,7 +24,7 @@ __global__ void mat_fast_transp(double *m_in, double *m_out, int siz)
 	int col=blockIdx.x*blockDim.x +threadIdx.x;
 	int row=blockIdx.y*blockDim.y +threadIdx.y;
 	tile[threadIdx.x][threadIdx.y]=m_in[row*siz+col];
-	__syncthreads();
+	//__syncthreads(); non é necessario
 	m_out[col*siz+row]=tile[threadIdx.x][threadIdx.y];
 }
 
