@@ -21,20 +21,20 @@ Time in milliseconds: 5358.452637
 Bandwidth: 0.200383 GB/s
 -------------------
 Optimized Transpose threads per block 64: Correct
-Time in milliseconds: 19.577856
-Bandwidth: 54.844708 GB/s
+Time in milliseconds: 16.293633
+Bandwidth: 65.899476 GB/s
 -------------------
 Optimized Transpose threads per blocks 512: Correct
-Time in milliseconds: 13.285888
-Bandwidth: 80.818224 GB/s
+Time in milliseconds: 9.420992
+Bandwidth: 113.973328 GB/s
 -------------------
 Optimized Transpose threads per block 512: Correct
-Time in milliseconds: 24.196417
-Bandwidth: 44.376068 GB/s
+Time in milliseconds: 16.960064
+Bandwidth: 63.310012 GB/s
 -------------------
 Optimized Transpose threads per blocks 1024: Correct
-Time in milliseconds: 25.163937
-Bandwidth: 42.669868 GB/s
+Time in milliseconds: 17.003424
+Bandwidth: 63.148568 GB/s
 -------------------
 
 ```
